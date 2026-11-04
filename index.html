@@ -133,14 +133,14 @@ body[data-tone="light"] .pager button{color:var(--paper-ink)}
 
 /* 4 imagine */
 #imagine{background:#0d0a10}
-#imagine .photo{object-position:0% center}
-#imagine .photo-fade{background:linear-gradient(90deg,#0d0a10 36%,rgba(13,10,16,.82) 41%,rgba(13,10,16,.45) 48%,rgba(13,10,16,.12) 56%,rgba(13,10,16,0) 62%),linear-gradient(0deg,rgba(13,10,16,.55),transparent 25%)}
+#imagine .photo{width:100%;object-position:50% center}
+#imagine .photo-fade{background:linear-gradient(90deg,rgba(13,10,16,.92) 0%,rgba(13,10,16,.8) 26%,rgba(13,10,16,.4) 38%,rgba(13,10,16,0) 52%),linear-gradient(0deg,rgba(13,10,16,.55),transparent 25%)}
 @media (max-width:760px){#imagine .photo-fade{background:linear-gradient(0deg,#0d0a10 30%,rgba(13,10,16,.4) 60%,rgba(13,10,16,.15))}}
 #imagine .imagine-copy{max-width:520px;text-shadow:0 1px 12px rgba(13,10,16,.6)}
   background:radial-gradient(ellipse at 50% 70%,#4a3a22,#1b140c 70%)}
 .imagine-copy{max-width:640px;display:flex;flex-direction:column;gap:20px}
 .offer{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
-.offer li{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--rule-dark);border-radius:999px;padding:6px 12px;color:var(--muted-dark);text-decoration:line-through;text-decoration-color:var(--orange-hot)}
+.offer li{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--rule-dark);border-radius:999px;padding:6px 12px;color:var(--muted-dark)}
 
 /* 5/6 problem + solution */
 .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,22px)}
@@ -150,7 +150,7 @@ body[data-tone="light"] .pager button{color:var(--paper-ink)}
 .card .plate{aspect-ratio:4/3;max-width:100%;border-radius:4px;position:relative;overflow:hidden}
 .card .num{font-family:var(--display);font-stretch:125%;font-weight:900;font-size:1.4rem;color:var(--orange-hot)}
 .card p{margin:0;font-size:1rem;line-height:1.45}
-.card .was{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-light);text-decoration:line-through;text-decoration-color:var(--orange)}
+.card .was{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-light)}
 .card .row{display:flex;gap:14px;align-items:baseline}
 .plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
@@ -356,10 +356,10 @@ body[data-tone="light"] .pager button{color:var(--paper-ink)}
     <h2 class="h-l">Every visitor. Every moment. Every story.</h2>
     <hr class="rule">
     <div class="cards">
-      <div class="card"><span class="was">Outdated technology</span><div class="row"><span class="num">1</span><p><b>Adaptive, dynamic systems</b>, custom built for each space.</p></div></div>
-      <div class="card"><span class="was">Accommodate, don’t include</span><div class="row"><span class="num">2</span><p><b>Personalised audio zones</b> that run at the same time, side by side.</p></div></div>
-      <div class="card"><span class="was">Nobody offers everything</span><div class="row"><span class="num">3</span><p><b>The entire package:</b> consultation, creation and installation.</p></div></div>
-      <div class="card"><span class="was">One default visitor</span><div class="row"><span class="num">4</span><p><b>An editable backend</b> so venues can update content for every visitor.</p></div></div>
+      <div class="card"><span class="was">Instead of outdated technology</span><div class="row"><span class="num">1</span><p><b>Adaptive, dynamic systems</b>, custom built for each space.</p></div></div>
+      <div class="card"><span class="was">Instead of accommodating</span><div class="row"><span class="num">2</span><p><b>Personalised audio zones</b> that run at the same time, side by side.</p></div></div>
+      <div class="card"><span class="was">Instead of piecemeal suppliers</span><div class="row"><span class="num">3</span><p><b>The entire package:</b> consultation, creation and installation.</p></div></div>
+      <div class="card"><span class="was">Instead of one default visitor</span><div class="row"><span class="num">4</span><p><b>An editable backend</b> so venues can update content for every visitor.</p></div></div>
     </div>
   </div>
 </section>
