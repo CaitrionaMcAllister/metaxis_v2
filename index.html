@@ -98,6 +98,10 @@ body[data-tone="light"] .pager button{color:var(--paper-ink)}
 /* glow atmosphere, echoing the deck's blurred light */
 .glow{position:absolute;z-index:-1;border-radius:50%;filter:blur(70px);pointer-events:none}
 
+/* photos from the Canva deck */
+.photo{position:absolute;z-index:-2;top:0;bottom:0;right:0;width:64%;height:100%;object-fit:cover;object-position:center}
+.photo-fade{position:absolute;z-index:-1;inset:0;pointer-events:none}
+@media (max-width:760px){.photo{width:100%;opacity:.55}}
 /* 1 title */
 #title .glow.a{width:70vw;height:46vh;left:-22vw;top:42%;background:#F8B190;opacity:.9}
 #title .glow.b{width:40vw;height:60vh;left:-24vw;top:-10%;background:#000;opacity:.85}
@@ -128,11 +132,10 @@ body[data-tone="light"] .pager button{color:var(--paper-ink)}
 .key{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:8px;vertical-align:middle}
 
 /* 4 imagine */
-#imagine{background:radial-gradient(ellipse 50% 60% at 62% 34%,rgba(214,145,70,.32),transparent 70%),radial-gradient(ellipse 60% 70% at 15% 70%,rgba(94,54,140,.45),transparent 70%),linear-gradient(180deg,#1a1222,#0d0a10)}
-.frame{position:absolute;z-index:-1;right:8vw;top:16vh;width:min(34vw,460px);aspect-ratio:4/3;border:10px solid #8a6a34;box-shadow:0 0 0 2px #3b2a12,0 30px 80px rgba(0,0,0,.6),0 -40px 120px rgba(230,160,80,.18);
+#imagine{background:#0d0a10}
+#imagine .photo{object-position:28% center}
+#imagine .photo-fade{background:linear-gradient(90deg,#0d0a10 34%,rgba(13,10,16,.6) 52%,rgba(13,10,16,0) 72%),linear-gradient(0deg,rgba(13,10,16,.7),transparent 30%)}
   background:radial-gradient(ellipse at 50% 70%,#4a3a22,#1b140c 70%)}
-.frame::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(95deg,rgba(0,0,0,.25) 0 3px,transparent 3px 22px);opacity:.5}
-@media (max-width:760px){.frame{opacity:.35;right:-10vw;top:12vh;width:70vw}}
 .imagine-copy{max-width:640px;display:flex;flex-direction:column;gap:20px}
 .offer{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
 .offer li{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--rule-dark);border-radius:999px;padding:6px 12px;color:var(--muted-dark);text-decoration:line-through;text-decoration-color:var(--orange-hot)}
@@ -147,9 +150,17 @@ body[data-tone="light"] .pager button{color:var(--paper-ink)}
 .card p{margin:0;font-size:1rem;line-height:1.45}
 .card .was{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-light);text-decoration:line-through;text-decoration-color:var(--orange)}
 .card .row{display:flex;gap:14px;align-items:baseline}
-.plate svg{position:absolute;inset:0;width:100%;height:100%}
+.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
+/* who we are */
+.who{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,80px);align-items:stretch}
+@media (max-width:860px){.who{grid-template-columns:1fr}}
+.who-img{width:100%;height:100%;max-height:78vh;min-height:280px;object-fit:cover;border-radius:4px;display:block;max-width:100%}
+.who-copy{display:flex;flex-direction:column;justify-content:center;gap:22px;padding-block:24px;border-block:1px solid var(--rule-light);min-width:0}
+.who-copy p{margin:0;max-width:56ch;font-size:clamp(1rem,1.3vw,1.15rem)}
 /* 7 spotlight demo */
+#spotlight .photo{width:100%;opacity:.28}
+#spotlight .photo-fade{background:linear-gradient(90deg,rgba(19,15,14,.85),rgba(19,15,14,.55))}
 .demo-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(20px,3vw,48px);align-items:center}
 @media (max-width:980px){.demo-grid{grid-template-columns:1fr}}
 .stage{position:relative;border-radius:10px;overflow:hidden;background:#0a0708;border:1px solid var(--rule-dark);aspect-ratio:16/10;max-width:100%}
@@ -182,12 +193,7 @@ body[data-tone="light"] .pager button{color:var(--paper-ink)}
 @media (max-width:760px){.vision-foot{grid-template-columns:1fr}}
 
 /* 9 goals */
-#goals .band{height:clamp(90px,16vh,170px);border-radius:6px;background:
-  radial-gradient(ellipse 30% 90% at 30% 50%,rgba(70,110,255,.85),transparent 70%),
-  radial-gradient(ellipse 30% 90% at 68% 50%,rgba(255,60,190,.85),transparent 70%),
-  radial-gradient(ellipse 20% 70% at 90% 60%,rgba(255,120,40,.8),transparent 70%),
-  linear-gradient(90deg,#1b1450,#3a1260 50%,#5c1838);position:relative;overflow:hidden}
-#goals .band::after{content:"";position:absolute;left:38%;top:50%;width:24%;height:2px;background:linear-gradient(90deg,transparent,#fff,transparent);box-shadow:0 0 18px 4px rgba(255,255,255,.6)}
+#goals .band{height:clamp(110px,22vh,240px);border-radius:6px;background:#1b1450 url(images/goals-hands.jpg) center/cover no-repeat;position:relative;overflow:hidden}
 .cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,44px)}
 @media (max-width:860px){.cols3{grid-template-columns:1fr}}
 .col{display:flex;flex-direction:column;gap:10px;min-width:0}
@@ -218,10 +224,8 @@ body[data-tone="light"] .pager button{color:var(--paper-ink)}
 
 /* 12 origins */
 #origins{background:#0d0a0c}
-#origins .glow.a{width:46vw;height:70vh;left:-8vw;top:6vh;background:#E8470F;opacity:.75}
-#origins .glow.b{width:34vw;height:60vh;left:34vw;top:-12vh;background:#D9367F;opacity:.6}
-#origins .glow.c{width:36vw;height:70vh;right:-8vw;top:18vh;background:#1F8FA3;opacity:.55}
-.silhouettes{position:absolute;z-index:-1;inset:auto 0 0 0;height:78%;opacity:.92;pointer-events:none}
+#origins .photo{width:72%}
+#origins .photo-fade{background:linear-gradient(90deg,#0d0a0c 30%,rgba(13,10,12,.55) 50%,rgba(13,10,12,0) 70%)}
 .origins-copy{max-width:620px;display:flex;flex-direction:column;gap:18px}
 .origins-copy p{margin:0;font-size:clamp(1.02rem,1.35vw,1.2rem);line-height:1.55}
 .belong{font-family:var(--display);font-stretch:125%;font-weight:900;text-transform:uppercase;font-size:clamp(1.3rem,2.4vw,2.1rem);line-height:1.05}
@@ -261,7 +265,7 @@ body[data-tone="light"] .pager button{color:var(--paper-ink)}
   <a class="wordmark" href="#title">METAXIS</a>
   <div class="bar-right">
     <span class="label" id="section-label">Final pitch</span>
-    <span class="counter" id="counter">01 / 13</span>
+    <span class="counter" id="counter">01 / 14</span>
     <button class="btn" id="notes-toggle" aria-pressed="false" aria-controls="notes" title="Speaker notes (N)"><span>Notes</span></button>
   </div>
 </header>
@@ -316,7 +320,7 @@ body[data-tone="light"] .pager button{color:var(--paper-ink)}
 
 <!-- 4 JUST IMAGINE -->
 <section class="slide dark" id="imagine" data-label="Just imagine" data-tone="dark">
-  <div class="frame" aria-hidden="true"></div>
+  <img class="photo" src="images/imagine.jpg" alt="Two visitors stand in front of a painting in a dim gallery; one holds an audio-guide headset." loading="eager"><div class="photo-fade" aria-hidden="true"></div>
   <div class="inner" style="justify-content:flex-end">
     <div class="imagine-copy">
       <h2 class="h-l">Just<br>imagine</h2>
@@ -335,10 +339,10 @@ body[data-tone="light"] .pager button{color:var(--paper-ink)}
     <h2 class="h-l">Same visitor. Same moment. Same story.</h2>
     <hr class="rule">
     <div class="cards">
-      <div class="card"><div class="plate" style="background:linear-gradient(160deg,#3a4a5a,#121a22)"><svg viewBox="0 0 200 150" aria-hidden="true"><rect x="78" y="22" width="48" height="96" rx="8" fill="#0d1115" stroke="#7d8a96" stroke-width="2"/><rect x="83" y="32" width="38" height="70" rx="2" fill="#2b5fbf"/><rect x="88" y="44" width="28" height="6" rx="2" fill="#dfe8f5"/><rect x="88" y="56" width="20" height="6" rx="2" fill="#dfe8f5" opacity=".6"/><path d="M60 150c4-30 14-40 26-44" stroke="#c99a7c" stroke-width="16" stroke-linecap="round" fill="none"/></svg></div><div class="row"><span class="num">1</span><p>Outdated technology, not future thinking.</p></div></div>
-      <div class="card"><div class="plate" style="background:linear-gradient(160deg,#5a4630,#1a130c)"><svg viewBox="0 0 200 150" aria-hidden="true"><g fill="#0e0a07"><circle cx="40" cy="62" r="9"/><rect x="31" y="73" width="18" height="44" rx="8"/><circle cx="80" cy="58" r="9"/><rect x="71" y="69" width="18" height="50" rx="8"/><circle cx="122" cy="60" r="9"/><rect x="113" y="71" width="18" height="48" rx="8"/><circle cx="162" cy="64" r="9"/><rect x="153" y="75" width="18" height="42" rx="8"/></g><circle cx="60" cy="128" r="14" fill="none" stroke="#0e0a07" stroke-width="5"/><rect x="0" y="22" width="200" height="16" fill="#8a6a34" opacity=".45"/></svg></div><div class="row"><span class="num">2</span><p>Spaces accommodate visitors. They don’t include them.</p></div></div>
-      <div class="card"><div class="plate" style="background:radial-gradient(circle at 65% 40%,#f4f1ff,#7a54d8 30%,#d23c6c 60%,#120d14 90%)"><svg viewBox="0 0 200 150" aria-hidden="true"><g fill="#0b0809"><path d="M58 150c0-30 6-50 20-60-10-8-12-26-2-36s30-6 32 10c2 12-4 22-10 26 14 10 20 30 20 60z"/><path d="M120 150c0-26 6-42 18-50-8-8-9-22-1-30s24-4 26 8c2 10-3 18-8 22 12 8 16 26 16 50z" opacity=".85"/></g></svg></div><div class="row"><span class="num">3</span><p>Nobody in the industry offers everything.</p></div></div>
-      <div class="card"><div class="plate" style="background:linear-gradient(160deg,#22406a,#0b1220)"><svg viewBox="0 0 200 150" aria-hidden="true"><rect x="44" y="26" width="112" height="84" rx="6" fill="#d9dee6" stroke="#5b6472" stroke-width="5"/><g><circle cx="76" cy="66" r="11" fill="#1d3f8f"/><circle cx="100" cy="66" r="11" fill="#e8e8e8" stroke="#bbb"/><circle cx="124" cy="66" r="11" fill="#c8102e"/></g><path d="M130 150l8-40c2-8 12-6 12 2l-2 14 14-4c8-2 12 6 6 12l-18 16z" fill="#c99a7c"/></svg></div><div class="row"><span class="num">4</span><p>Built for a default visitor, not every individual.</p></div></div>
+      <div class="card"><div class="plate"><img src="images/problem-1-phone.jpg" alt="A hand holding a phone running a translation app." loading="lazy"></div><div class="row"><span class="num">1</span><p>Outdated technology, not future thinking.</p></div></div>
+      <div class="card"><div class="plate"><img src="images/problem-2-gallery.jpg" alt="A busy gallery with families and a visitor in a wheelchair." loading="lazy"></div><div class="row"><span class="num">2</span><p>Spaces accommodate visitors. They don’t include them.</p></div></div>
+      <div class="card"><div class="plate"><img src="images/problem-3-silhouettes.jpg" alt="Silhouettes of three people in red and blue light." loading="lazy"></div><div class="row"><span class="num">3</span><p>Nobody in the industry offers everything.</p></div></div>
+      <div class="card"><div class="plate"><img src="images/problem-4-kiosk.jpg" alt="A hand tapping a kiosk offering three language flags." loading="lazy"></div><div class="row"><span class="num">4</span><p>Built for a default visitor, not every individual.</p></div></div>
     </div>
   </div>
 </section>
@@ -359,7 +363,23 @@ body[data-tone="light"] .pager button{color:var(--paper-ink)}
 </section>
 
 <!-- 7 WHAT WE DO (interactive) -->
+<section class="slide light" id="who" data-label="Who we are" data-tone="light">
+  <div class="inner">
+    <div class="who">
+      <img class="who-img" src="images/who-we-are.jpg" alt="Visitors in a dark hall, each family standing in its own coloured beam of light." loading="lazy">
+      <div class="who-copy">
+        <div class="eyebrow" style="border:0;padding:0"><span>Who we are</span><span class="arrow">↗</span></div>
+        <h2 class="h-l">Who<br>are we</h2>
+        <p>Metaxis is a directional audio system. Using precise, focused sound steering, we create personalised audio zones inside a single space.</p>
+        <p>So every visitor hears the right content, in their language, from exactly the right direction.</p>
+        <p><b>No headsets. No devices. No compromise.</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="slide dark" id="spotlight" data-label="What we do" data-tone="dark">
+  <img class="photo" src="images/what-we-do.jpg" alt="" aria-hidden="true" loading="lazy"><div class="photo-fade" aria-hidden="true"></div>
   <div class="inner">
     <div class="eyebrow"><span>What we do</span><span class="arrow">↗</span></div>
     <div class="demo-grid">
@@ -375,7 +395,7 @@ body[data-tone="light"] .pager button{color:var(--paper-ink)}
       </div>
       <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
         <h2 class="h-m">Conventional speakers are a floodlight. Metaxis is a spotlight.</h2>
-        <p style="margin:0">Metaxis is a directional audio system. Precise sound steering creates an invisible audio zone for each visitor, so everyone hears the right content, in their language, from exactly the right direction.</p>
+        <p style="margin:0">An invisible audio zone for each visitor. Tap a visitor in the room to hear what reaches them.</p>
         <ul class="checks">
           <li>Multiple independent, personalised sound zones</li>
           <li>Different content, at different levels</li>
@@ -392,10 +412,10 @@ body[data-tone="light"] .pager button{color:var(--paper-ink)}
 <section class="slide dark" id="vision" data-label="Vision" data-tone="dark">
   <div class="inner">
     <div class="stats">
-      <div class="stat" style="--g:radial-gradient(ellipse at 40% 30%,#6b5aa8,#2a1f3c 55%,#120d16)"><small>Increased footfall and repeat customers</small><div class="big"><svg class="up" viewBox="0 0 22 30" aria-hidden="true"><path d="M11 0 22 12h-7v18H7V12H0z" fill="#F3EFEB"/></svg><b>30%</b><span>Increase in<br>dwell time</span></div></div>
-      <div class="stat" style="--g:radial-gradient(ellipse at 60% 30%,#7a5a3a,#2a1d14 55%,#100c09)"><small>Better audience data for further analytics</small><div class="big"><svg class="up" viewBox="0 0 22 30" aria-hidden="true"><path d="M11 0 22 12h-7v18H7V12H0z" fill="#F3EFEB"/></svg><b>3×</b><span>Higher data<br>accuracy</span></div></div>
-      <div class="stat" style="--g:radial-gradient(ellipse at 50% 20%,#4d7fb0,#1b2a3e 55%,#0b0f15)"><small>Advancements in technology that empower the community</small><div class="big"><svg class="up" viewBox="0 0 22 30" aria-hidden="true"><path d="M11 0 22 12h-7v18H7V12H0z" fill="#F3EFEB"/></svg><b>$30bn</b><span>Industry<br>by 2031</span></div></div>
-      <div class="stat" style="--g:radial-gradient(ellipse at 70% 30%,#e05aa0,#7a2040 40%,#1a0d14 80%)"><small>Tourism, educational and cultural growth</small><div class="big"><svg class="up" viewBox="0 0 22 30" aria-hidden="true"><path d="M11 0 22 12h-7v18H7V12H0z" fill="#F3EFEB"/></svg><b>86%</b><span>Would<br>spend more</span></div></div>
+      <div class="stat" style="--g:url(images/vision-1-footfall.jpg) center/cover no-repeat"><small>Increased footfall and repeat customers</small><div class="big"><svg class="up" viewBox="0 0 22 30" aria-hidden="true"><path d="M11 0 22 12h-7v18H7V12H0z" fill="#F3EFEB"/></svg><b>30%</b><span>Increase in<br>dwell time</span></div></div>
+      <div class="stat" style="--g:url(images/vision-2-data.jpg) center/cover no-repeat"><small>Better audience data for further analytics</small><div class="big"><svg class="up" viewBox="0 0 22 30" aria-hidden="true"><path d="M11 0 22 12h-7v18H7V12H0z" fill="#F3EFEB"/></svg><b>3×</b><span>Higher data<br>accuracy</span></div></div>
+      <div class="stat" style="--g:url(images/vision-3-community.jpg) center/cover no-repeat"><small>Advancements in technology that empower the community</small><div class="big"><svg class="up" viewBox="0 0 22 30" aria-hidden="true"><path d="M11 0 22 12h-7v18H7V12H0z" fill="#F3EFEB"/></svg><b>$30bn</b><span>Industry<br>by 2031</span></div></div>
+      <div class="stat" style="--g:url(images/vision-4-growth.jpg) center/cover no-repeat"><small>Tourism, educational and cultural growth</small><div class="big"><svg class="up" viewBox="0 0 22 30" aria-hidden="true"><path d="M11 0 22 12h-7v18H7V12H0z" fill="#F3EFEB"/></svg><b>86%</b><span>Would<br>spend more</span></div></div>
     </div>
     <div class="eyebrow"><span>Vision</span><span class="arrow">↘</span></div>
     <div class="vision-foot">
@@ -462,12 +482,7 @@ body[data-tone="light"] .pager button{color:var(--paper-ink)}
 
 <!-- 12 ORIGINS -->
 <section class="slide dark" id="origins" data-label="Our origins" data-tone="dark">
-  <span class="glow a"></span><span class="glow b"></span><span class="glow c"></span>
-  <svg class="silhouettes" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-    <path fill="#0d0a0c" opacity=".55" d="M210 600c0-90 18-150 60-180-40-30-52-100-30-150 26-60 110-70 150-20 34 44 26 120-14 160 50 30 74 100 74 190z"/>
-    <path fill="#0d0a0c" opacity=".9" d="M420 600c0-110 20-180 70-220-46-36-60-120-32-180 32-70 136-80 182-20 40 52 30 140-18 190 60 36 88 120 88 230z"/>
-    <path fill="#0d0a0c" opacity=".6" d="M690 600c0-90 18-150 58-178-38-30-50-96-28-146 26-58 106-66 144-18 32 42 24 114-14 154 48 30 70 98 70 188z"/>
-  </svg>
+  <img class="photo" src="images/origins.jpg" alt="Three silhouetted people lit in red, pink and teal light." loading="lazy"><div class="photo-fade" aria-hidden="true"></div>
   <div class="inner" style="justify-content:flex-end">
     <div class="origins-copy">
       <h2 class="h-l">Our<br>origins</h2>
@@ -530,6 +545,7 @@ body[data-tone="light"] .pager button{color:var(--paper-ink)}
     imagine:["Imagine visiting a public space with someone who doesn’t speak English as a first language. They can see the information around them, but they can’t read or hear it.","Right now, the best that is offered to them is a headset, a queue, and at best three language options.","That’s the real problem. And that’s why Metaxis exists."],
     problem:["There’s outdated technology.","They accommodate but don’t include.","Nobody in the industry offers everything.","Stuck on a default visitor rather than every individual."],
     solution:["Metaxis wants to offer adaptive and dynamic systems.","Personalised audio zones.","The entire package: consultation, creation and installation.","Updatable and editable backend systems."],
+    who:["Metaxis is a multi-directional audio system. Using precise sound steering technology, we create personalised audio zones inside a single space, so every visitor hears the right content, in their language, from exactly the right direction.","No headsets. No devices. No compromise. Every seat the best seat. Every visitor, an equal experience."],
     spotlight:["Conventional speakers are like a floodlight. Metaxis is a spotlight; an invisible audio zone for each visitor.","Metaxis offers multiple independent personalised sound zones, different content, different languages, all simultaneously.","(Toggle Floodlight / Metaxis, tap a visitor.) No headset. No devices. Every seat, the best seat."],
     vision:["There’s a proven link between accessibility, audio, education and profitability.","Increased footfall. Better overall data. Advancements in technology. Growth opportunities."],
     goals:["The overall goals for the project, and the larger opportunity this could bring.","1. Redefine the industry standard for inclusive design.","2. Build the economic case for belonging.","3. Shape how cities and communities experience culture together."],

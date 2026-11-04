@@ -13,4 +13,4 @@ This repo holds the Metaxis pitch as a web deck (NatWest × UAL accelerator fina
 
 ## Slides
 
-title · fact · impact · imagine · problem · solution · spotlight · vision · goals · timeline · investment · origins · contact
+title · fact · impact · imagine · problem · solution · who · spotlight · vision · goals · timeline · investment · origins · contact
