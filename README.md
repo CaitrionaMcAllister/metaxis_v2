@@ -9,8 +9,8 @@ This repo holds the Metaxis pitch as a web deck (NatWest × UAL accelerator fina
 - Open `index.html` in a browser, or deploy the repo to any static host (Vercel, Netlify, GitHub Pages).
 - Move between slides with the arrow keys, space, Page Up/Down, or the on-screen buttons. On a phone, scroll.
 - Press **N** (or the Notes button) to show the speaker notes for the current slide.
-- Each slide has its own link, for example `index.html#investment`.
+- Each slide has its own link, for example `index.html#timeline`.
 
 ## Slides
 
-title · fact · impact · imagine · problem · solution · who · spotlight · vision · goals · timeline · investment · origins · contact
+title · fact · impact · imagine · problem · solution · who · spotlight · vision · goals · timeline · origins · contact
